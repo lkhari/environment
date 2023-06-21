@@ -1,0 +1,17 @@
+alias clear='printf "\033c"'
+alias vim=nvim
+alias ls="ls --color -G --group-directories-first"
+alias pn=pnpm
+
+cd() {
+    builtin cd "${@:-$HOME}" && ls
+}
+
+destroy() {
+	ps aux -W | grep $1 | awk '{print $2}' | xargs kill
+}
+
+epoch() {
+  date -d @$(($1 / 1000))
+}
+
