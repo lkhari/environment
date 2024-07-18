@@ -29,8 +29,8 @@ export PATH=$PATH:~/.local/bin
 export PATH=$PATH:$HOME/dev/bin
 export ERL_AFLAGS="-kernel shell_history enabled"
 export EDITOR=nvim
-export GOPATH=/home/l/dev/gopath
-
+export GOPATH="$HOME/go"
+export PATH=$PATH:$GOPATH/bin
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
@@ -40,8 +40,6 @@ chpwd() {
     pwd > /tmp/whereami
 }
 
-WHEREAMI=$(cat /tmp/whereami)
-# builtin cd $WHEREAMIdd
 export NODE_OPTIONS=--max-old-space-size=4096
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
