@@ -1,1 +1,3 @@
 sudo apt install fzf
+
+cp scripts/tmux-sessionizer ~/.local/bin/tmux-sessionizer
