@@ -1,3 +1,4 @@
-sudo apt install fzf
+sudo apt install fzf stow
 
 cp scripts/tmux-sessionizer ~/.local/bin/tmux-sessionizer
+stow -R -v -t ~ -d ~/environment/home .
