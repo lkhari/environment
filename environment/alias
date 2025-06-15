@@ -14,4 +14,3 @@ destroy() {
 epoch() {
   date -d @$(($1 / 1000))
 }
-
