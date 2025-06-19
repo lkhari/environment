@@ -1,5 +1,15 @@
 #!/usr/bin/env bash
 
+if ! command -v fzf &> /dev/null; then
+  echo "fzf is not installed. Please install it to use this script."
+  exit 1
+fi
+
+if ! command -v zellij &> /dev/null; then
+  echo "zellij is not installed. Please install it to use this script."
+  exit 1
+fi
+
 if [[ $# -eq 1 ]]; then
   selected=$1
 else
@@ -11,7 +21,11 @@ if [[ -z $selected ]]; then
 fi
 
 selected_name=$(basename "$selected" | tr . _)
-zellij_runnin=$(pgrep zellij)
 
 cd $selected
-zellij attach --create $selected_name
+
+if zellij list-sessions 2>/dev/null | grep -q "^$selected_name$"; then
+    zellij attach $selected_name
+else
+    zellij attach --create $selected_name
+fi

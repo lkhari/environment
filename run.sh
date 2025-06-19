@@ -82,6 +82,9 @@ else
   echo "Installing system maintenance tools..."
   install_packages "${MAINTENANCE[@]}"
 
+  echo "Installing aws tools..."
+  install_packages "${AWS[@]}"
+
   echo "Installing desktop environment..."
   install_packages "${DESKTOP[@]}"
 
@@ -93,7 +96,7 @@ else
 
   echo "Installing fonts..."
   install_packages "${FONTS[@]}"
-  
+
   # Enable services
   echo "Configuring services..."
   for service in "${SERVICES[@]}"; do

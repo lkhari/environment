@@ -2,6 +2,7 @@ FLATPAKS=(
   "spotify"
   "discord"
   "slack"
+  "it.mijorus.smile"
 )
 
 for pak in "${FLATPAKS[@]}"; do
